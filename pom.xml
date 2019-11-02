@@ -3,15 +3,15 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.bhn.training</groupId>
-	<artifactId>greeter-bundle</artifactId>
+	<artifactId>greeter-impl</artifactId>
 	<packaging>bundle</packaging>
 	<version>1.0-SNAPSHOT</version>
-	<name>greeter-bundle</name>
+	<name>greeter-impl</name>
 	<url>http://maven.apache.org</url>
 	<properties>
 		<pax.exam.version>4.5.0</pax.exam.version>
 		<url.version>1.6.0</url.version>
-		 <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<build>
 		<plugins>
@@ -24,16 +24,10 @@
 					<instructions>
 						<Bundle-Name>${project.name}</Bundle-Name>
 						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
-						<Export-Package>org.bhn.training.api</Export-Package>
+						<Import-Package>org.osgi.framework;version="1.0.0",
+							org.bhn.training.api**,***</Import-Package>
 					</instructions>
 				</configuration>
-				<executions>
-					<execution>
-						<goals>
-							<goal>manifest</goal>
-						</goals>
-					</execution>
-				</executions>
 			</plugin>
 
 			<plugin>
@@ -49,19 +43,7 @@
 					</execution>
 				</executions>
 			</plugin>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>failsafe-maven-plugin</artifactId>
-				<version>2.4.3-alpha-1</version>
-				<executions>
-					<execution>
-						<goals>
-							<goal>integration-test</goal>
-							<goal>verify</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
+			
 		</plugins>
 	</build>
 	<dependencies>
@@ -124,9 +106,9 @@
 			<version>4.12</version>
 		</dependency>
 		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>servlet-api</artifactId>
-			<version>2.5</version>
+			<groupId>org.bhn.training</groupId>
+			<artifactId>greeter-api</artifactId>
+			<version>1.0-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 </project>
