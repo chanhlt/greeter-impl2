@@ -3,10 +3,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.bhn.training</groupId>
-	<artifactId>greeter-impl</artifactId>
+	<artifactId>greeter-impl2</artifactId>
 	<packaging>bundle</packaging>
 	<version>1.0-SNAPSHOT</version>
-	<name>greeter-impl</name>
+	<name>greeter-impl2</name>
 	<url>http://maven.apache.org</url>
 	<properties>
 		<pax.exam.version>4.5.0</pax.exam.version>
@@ -24,8 +24,8 @@
 					<instructions>
 						<Bundle-Name>${project.name}</Bundle-Name>
 						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
-						<Import-Package>org.osgi.framework;version="1.0.0",
-							org.bhn.training.api**,***</Import-Package>
+						<!-- <Import-Package>org.osgi.framework;version="1.0.0",
+							org.bhn.training.api**,***</Import-Package> -->
 					</instructions>
 				</configuration>
 			</plugin>
